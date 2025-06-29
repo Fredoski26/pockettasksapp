@@ -1,35 +1,29 @@
 # pockettasksapp
 
-Project Brief – Pocket Tasks
-Create Pocket Tasks, a simple task management app with the following features:
-Task List – shows all tasks.
+
+How to Run
+
+Installation Steps
+
+Clone the project
+
+Install dependencies
+run flutter pub get
+
+Run the app
+flutter run
+
+Why Riverpod?
+I chose Flutter Riverpod as the state management solution:
+
+🔒 Compile-time Safety: Riverpod catches provider errors at compile time, preventing runtime crashes
+🧪 Testability: Providers can be easily overridden for testing without complex mocking
+📦 No Context Dependency: Providers can be read anywhere without requiring BuildContext
+🔄 Automatic Disposal: Providers are automatically disposed when no longer needed
 
 
-Add/Edit Task – for creating or updating a task (title, note, due date, completed status).
-
-
-Optional: Task Details screen.
-
-
-
- Functional Requirements
-Add, edit, delete, and mark tasks as complete/incomplete
-
-
-Store tasks locally using Hive, SharedPreferences, or SQLite
-
-
-Use a proper state-management library: Riverpod, Provider, Bloc, or similar
-
-
-Filter tasks by status: All, Active, Completed
-
-
-Sort tasks by due date or creation date
-
-
-Responsive and polished UI with light/dark themes
-
-
-Basic animations for task actions
-
+Architecture Summary
+UI Layer → Consumer widgets watch providers
+State Layer → Riverpod providers manage state
+Business Layer → StateNotifiers handle business logic
+Data Layer → DatabaseService manages SQLite operations
